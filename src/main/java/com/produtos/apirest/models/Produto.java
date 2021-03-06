@@ -21,7 +21,7 @@ public class Produto implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private Long id;
 	@NotNull
 	private String nome;
 	@NotNull
