@@ -7,4 +7,7 @@ import com.produtos.apirest.models.Produto;
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 	Produto findById(long id);
+	
+
+	
 }
