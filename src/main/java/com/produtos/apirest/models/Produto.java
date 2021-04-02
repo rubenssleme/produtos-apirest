@@ -2,13 +2,12 @@ package com.produtos.apirest.models;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -19,7 +18,7 @@ public class Produto implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private Long id;
 	@NotNull
 	private String nome;
 	@NotNull
@@ -30,11 +29,18 @@ public class Produto implements Serializable{
 	private BigDecimal valor;
 	@NotNull
 	private String imgUrl;
+
+	@ManyToMany
+	@JoinTable(name = "tb_produto_categoria",
+			joinColumns = @JoinColumn(name ="produto_id"),
+			inverseJoinColumns = @JoinColumn(name ="categoria_id"))
+	private Set<Categoria> categorias = new HashSet<>();
 	public Produto() {
 
 	}
 
-	public Produto(long id, @NotNull String nome, @NotNull String descricao, @NotNull BigDecimal quantidade, @NotNull BigDecimal valor, @NotNull String imgUrl) {
+	public Produto(Long id, @NotNull String nome, @NotNull String descricao, @NotNull BigDecimal quantidade, @NotNull BigDecimal valor, @NotNull String imgUrl) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.descricao = descricao;
@@ -44,7 +50,7 @@ public class Produto implements Serializable{
 	}
 
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -92,6 +98,10 @@ public class Produto implements Serializable{
 		this.imgUrl = imgUrl;
 	}
 
+	public Set<Categoria> getCategorias() {
+		return categorias;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -104,4 +114,7 @@ public class Produto implements Serializable{
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
+
+
 }
