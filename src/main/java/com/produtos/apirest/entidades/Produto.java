@@ -1,8 +1,7 @@
-package com.produtos.apirest.models;
+package com.produtos.apirest.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;

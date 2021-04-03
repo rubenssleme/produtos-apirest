@@ -1,13 +1,12 @@
 package com.produtos.apirest.config;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.util.Arrays;
 
-import com.produtos.apirest.models.Categoria;
-import com.produtos.apirest.models.Produto;
-import com.produtos.apirest.repository.CategoriaRepository;
-import com.produtos.apirest.repository.ProdutoRepository;
+import com.produtos.apirest.entidades.Categoria;
+import com.produtos.apirest.entidades.Produto;
+import com.produtos.apirest.repositorios.CategoriaRepositorio;
+import com.produtos.apirest.repositorios.ProdutoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -27,9 +26,9 @@ public class TesteConfig implements CommandLineRunner {
 	private PedidoItemRepositorio pedidoItemRepositorio;
 	*/
 	@Autowired
-	private CategoriaRepository categoriaRepositorio;
+	private CategoriaRepositorio categoriaRepositorio;
 	@Autowired
-	private ProdutoRepository produtoRepositorio;
+	private ProdutoRepositorio produtoRepositorio;
 
 	@Override
 	public void run(String... args) throws Exception {

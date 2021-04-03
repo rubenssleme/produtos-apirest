@@ -1,4 +1,4 @@
-package com.produtos.apirest.models;
+package com.produtos.apirest.entidades;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

@@ -1,4 +1,4 @@
-package com.produtos.apirest.resources;
+package com.produtos.apirest.recursos;
 
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api")
 @Api(value="API REST Categorias")
 @CrossOrigin(origins = "*")
-public class CategoriaResource {
+public class CategoriaRecurso {
 }
